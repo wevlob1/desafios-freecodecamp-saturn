@@ -43,7 +43,21 @@ def arranjo(problems,aws = False):
       for t in range(4):
         display += ' ' 
     p += 1 
+  display += "\n"
   #[✅]
+  e = 0
+  for k,v in arranjed.items():
+    display += str(v[6])+ " "
+    if v[3] < v[2]:
+      space = v[2] - v[3]
+      while space:
+        display += " "
+        space -= 1
+    display += str(v[1])
+    if e < len(problems)-1:
+      for t in range(4):
+        display += ' ' 
+    e += 1 
   #return display
   print(display)
 arranjo(["200 + 28","1000 - 12","1388 + 100","1277 + 142"])
