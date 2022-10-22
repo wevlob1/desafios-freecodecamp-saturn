@@ -1,4 +1,4 @@
-def arranjo(problems,aws = False):
+def arranjo(problems,aws = True):
   display = ""
   d = list()
   arranjed = {}
@@ -30,7 +30,10 @@ def arranjo(problems,aws = False):
       arranjed[v] = i
       v += 1
     except:
-      print("ouve um erro")
+      print("---------------------------------------------------")
+      print(f"Erro: Caracteres não numéricos na {v+1}ª operação.")
+      print("---------------------------------------------------")
+      
   #[✅]
   p = 0
   for k,v in arranjed.items():
@@ -70,7 +73,21 @@ def arranjo(problems,aws = False):
     if u < len(problems)-1:
       for t in range(4):
         display += ' ' 
-    u += 1    
-  #return display
+    u += 1
+  display += "\n"
+  if aws == True:
+    y = 0
+    for k,v in arranjed.items():
+      space = v[5] - v[2]
+      while(space):
+        display += " "
+        space -= 1
+      display += str(v[0])
+      if y < len(problems)-1:
+        for t in range(4):
+          display += ' ' 
+      y += 1 
   print(display)
-arranjo(["200 + 28","1000 - 12","1388 + 100","1277 + 142"])
+  #return display
+  
+arranjo(["1000 - 12","1000 - 12","1388 + 100","1277 + 142"],False)
