@@ -23,10 +23,11 @@ def arranjo(problems,aws = True):
       a2 = int(d[2])
       l1 = len(d[0])
       l2 = len(d[2])
-      r = eval(k)
+      r =  eval(k)
+      l3 = len(str(r))
       m = max(l1,l2) + 2
       
-      i = [a1,a2,l1,l2,r,m,d[1]]
+      i = [a1,a2,l1,l2,r,m,d[1],l3]
       arranjed[v] = i
       v += 1
     except:
@@ -76,18 +77,18 @@ def arranjo(problems,aws = True):
     u += 1
   display += "\n"
   if aws == True:
-    y = 0
+    p = 0
     for k,v in arranjed.items():
-      space = v[5] - v[2]
+      space = 6 - v[7]
       while(space):
         display += " "
         space -= 1
-      display += str(v[0])
-      if y < len(problems)-1:
+      display += str(v[4])
+      if p < len(problems)-1:
         for t in range(4):
           display += ' ' 
-      y += 1 
+      p += 1 
   print(display)
   #return display
   
-arranjo(["1000 - 12","1000 - 12","1388 + 100","1277 + 142"],False)
+arranjo(["1000 - 12","1000 - 12","1388 + 100","1277 + 142"],True)
