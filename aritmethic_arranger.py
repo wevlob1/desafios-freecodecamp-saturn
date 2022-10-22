@@ -88,7 +88,7 @@ def arranjo(problems,aws = True):
         for t in range(4):
           display += ' ' 
       p += 1 
-  print(display)
-  #return display
+  
+  return display
   
 arranjo(["1000 - 12","1000 - 12","1388 + 100","1277 + 142"],True)
